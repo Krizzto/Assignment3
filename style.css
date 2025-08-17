@@ -1,0 +1,149 @@
+/* Reset */
+body, h1, h2, p, ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #0a0a0a;
+  color: #f5f5f5;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.95);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1DB954;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #1DB954;
+}
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("background.jpg") center/cover no-repeat;
+  text-align: center;
+  padding: 20px;
+}
+.hero-content {
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 15px;
+}
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  border: 3px solid #1DB954;
+}
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero h1 span {
+  color: #1DB954;
+}
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #1DB954;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: white;
+  color: #1DB954;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.project-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.project-card:hover {
+  background: rgba(255,255,255,0.15);
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.9);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    width: 200px;
+    padding: 20px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
